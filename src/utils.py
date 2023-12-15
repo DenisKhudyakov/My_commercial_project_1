@@ -17,7 +17,7 @@ def message_weather() -> str:
     """Получаем сообщение о погоде на текущий день"""
     weather = api_weather()
     now_date = datetime.strptime(weather['current']['last_updated'][:-6], '%Y-%m-%d').strftime('%d.%m.%Y')
-    return f'Привет Богам, погода в {weather["location"]["name"]}e {now_date} {weather["current"]["temp_c"]} градуса'
+    return f'Погода в {weather["location"]["name"]}e {now_date}\n{weather["current"]["temp_c"]} градуса'
 
 
 def message_currency() -> str:
