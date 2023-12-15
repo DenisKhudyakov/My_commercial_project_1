@@ -41,4 +41,3 @@ def get_comedy():
     with open(PATH_FILE, 'r', encoding='UTF-8') as f:
         comedy_list = json.load(f)
         return comedy_list
-
