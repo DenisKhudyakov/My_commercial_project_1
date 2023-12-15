@@ -2,6 +2,8 @@ import os
 import telebot
 import requests
 from dotenv import find_dotenv, load_dotenv
+from data.config import PATH_FILE
+import json
 
 def api_cbr() -> dict:
     """Получаем от сайте ЦБ РФ данные в формате JSON по крусам валют"""
@@ -34,3 +36,9 @@ def bot_activated():
         load_dotenv()
         KEY_BOT = os.getenv("TELEGRAM_API_KEY")
         return telebot.TeleBot(KEY_BOT)
+
+def get_comedy():
+    with open(PATH_FILE, 'r', encoding='UTF-8') as f:
+        comedy_list = json.load(f)
+        return comedy_list
+
